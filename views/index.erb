@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>Kwitter</title>
+  </head>
+  
+  <body>
+    <form method="post" action="/send_tweet">   
+      <h3>Send Tweet:</h3>
+      <br>
+      <input type="text" name="send">
+      <input type="submit">
+    </form>
+    
+    <p>
+      <%= @user.display_feed %>
+    </p>
+  </body>
+  
+</html>
