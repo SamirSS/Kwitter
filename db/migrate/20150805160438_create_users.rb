@@ -5,11 +5,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.integer :followers
       t.integer :following
+      
+      t.timestamps
     end
   end
   
   def down
-    drop_tables :users
+    drop_table :users
   end
   
 end

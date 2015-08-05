@@ -14,15 +14,19 @@
 ActiveRecord::Schema.define(version: 20150805160845) do
 
   create_table "tweets", force: :cascade do |t|
-    t.string "user"
-    t.string "message"
-    t.string "to_user"
+    t.integer  "user_id"
+    t.string   "message"
+    t.string   "to_user"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "username"
-    t.integer "followers"
-    t.integer "following"
+    t.string   "username"
+    t.integer  "followers"
+    t.integer  "following"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

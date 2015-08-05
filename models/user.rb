@@ -1,7 +1,7 @@
 require_relative 'tweet.rb'
 
 class User < ActiveRecord::Base
-  
+  has_many :tweets  
 #   attr_accessor :username, :followers, :following
   
 #   def initialize(username, followers, following)

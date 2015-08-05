@@ -1,6 +1,6 @@
  require_relative 'user.rb'
 class Tweet < ActiveRecord::Base
- 
+  belongs_to :user
 #   attr_accessor :user, :message, :to_user
   
 #   def initialize(user, message, to_user)
