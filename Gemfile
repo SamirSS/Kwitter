@@ -1,6 +1,14 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'pry'
 gem 'sinatra'
-gem 'shotgun'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'rake'
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'tux'
+  gem 'sqlite3'
+end
