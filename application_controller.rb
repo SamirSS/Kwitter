@@ -14,7 +14,23 @@ class ApplicationController < Sinatra::Base
   post "/send_tweet" do
     erb :index
   end
-  get '/profile/:name'  do
-  erb :profile
-end
+#     get '/profile/:name'  do
+#     erb :profile
+#   end
+  
+  post '/sign-up' do
+    @user = User.new
+    @user.username = params[:username]
+    @user.save
+    erb :index
+  end
+  
+  post '/tweet' do
+    @tweet = Tweet.new
+    @tweet.message = params[:message]
+    @tweet.user_id = params[:user]
+    @tweet.save
+    erb :index
+  end
+  
 end

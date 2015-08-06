@@ -7,16 +7,26 @@
   </head>
   
   <body>
-    <form method="post" action="/send_tweet">   
-      <h3>Send Tweet:</h3>
-      <br>
-      <input type="text" name="send">
-      <input type="submit">
+    <form method="POST" action="/sign-up">
+        <input type="text" name="username" placeholder="Username">
+        <input type="submit">
     </form>
     
-    <p>
-      <%= @user.display_feed %>
-    </p>
+    <h1> Kwitter </h1>
+
+    <% if @user %>
+    <h2>Hello <%= @user.username %></h2>
+      <form method="POST" action="/tweet">
+        <input type="text" name="message" placeholder="Tweet">  
+        <input type="hidden" name="user" value="<%= @user.id %>">
+        <input type="submit">
+      </form>
+    <% end %>
+
+    <% Tweet.all.each do |tweet| %>
+      <h3> <%= tweet.message %>  
+        -- <%= tweet.user.username %> </h3>
+    <% end %>
   </body>
   
 </html>
