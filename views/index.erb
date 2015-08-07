@@ -7,10 +7,18 @@
   </head>
   
   <body>
-    <form method="POST" action="/sign-up">
-        <input type="text" name="username" placeholder="Username">
+    <% if session[:user_id] %>
+      <form method="POST" action="/logout">
+        <input type="submit" value="Logout">
+      </form>
+  
+    Hello <%= session[:user_id].username %>
+      <form method="POST" action="tweet">
+        <input type="text" name="message" placeholder="Tweet Here">  
+        <input type="hidden" name="user" value="<%= session[:user_id].id %>">
         <input type="submit">
-    </form>
+      </form>
+    <% end %>
     
     <h1> Kwitter </h1>
 
